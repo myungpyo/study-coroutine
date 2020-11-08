@@ -4,7 +4,7 @@ import kotlinx.coroutines.*
 import java.io.IOException
 
 
-fun main(args: Array<String>) = runBlocking<Unit> {
+fun main() = runBlocking<Unit> {
     try {
         supervisorScope {
             val child = launch {

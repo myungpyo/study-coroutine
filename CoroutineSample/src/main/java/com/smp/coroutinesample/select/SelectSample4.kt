@@ -5,7 +5,7 @@ import kotlinx.coroutines.selects.select
 import kotlin.random.Random
 
 
-fun main(args: Array<String>) = runBlocking<Unit> {
+fun main() = runBlocking<Unit> {
 
     val list = asyncStringsList()
     val result = select<String> {

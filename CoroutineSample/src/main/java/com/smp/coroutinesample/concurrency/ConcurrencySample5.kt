@@ -7,7 +7,7 @@ import kotlinx.coroutines.sync.withLock
 
 val mutex = Mutex()
 
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
 
     GlobalScope.massiveRun {
         mutex.withLock {

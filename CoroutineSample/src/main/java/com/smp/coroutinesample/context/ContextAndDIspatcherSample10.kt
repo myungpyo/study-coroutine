@@ -3,7 +3,7 @@ package com.smp.coroutinesample.context
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
-fun main(args: Array<String>) = runBlocking<Unit> {
+fun main() = runBlocking<Unit> {
 
     val activity = Activity()
     activity.create() // create an activity

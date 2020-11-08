@@ -4,7 +4,7 @@ import kotlinx.coroutines.*
 import java.io.Closeable
 
 
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
     val job = launch {
         try {
             repeat(1000) { i ->

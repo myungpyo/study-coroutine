@@ -6,7 +6,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
     GlobalScope.launch {
         repeat(1000) { i ->
             println("I'm sleeping $i ...")

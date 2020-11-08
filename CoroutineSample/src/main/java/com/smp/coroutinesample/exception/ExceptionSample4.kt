@@ -3,7 +3,7 @@ package com.smp.coroutinesample.exception
 import kotlinx.coroutines.*
 
 
-fun main(args: Array<String>) = runBlocking<Unit> {
+fun main() = runBlocking<Unit> {
     val handler = CoroutineExceptionHandler { _, exception ->
         println("Caught $exception")
     }

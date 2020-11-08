@@ -6,7 +6,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
     val job = launch {
         try {
             repeat(1000) { i ->

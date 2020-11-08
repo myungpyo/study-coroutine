@@ -7,7 +7,7 @@ import kotlinx.coroutines.runBlocking
 import java.io.Closeable
 
 
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
     val job = launch {
         SleepingBed().use {
             it.sleep(1000)

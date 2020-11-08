@@ -8,7 +8,7 @@ import kotlinx.coroutines.runBlocking
 
 data class Ball(var hits: Int)
 
-fun main(args: Array<String>) = runBlocking<Unit> {
+fun main() = runBlocking<Unit> {
     val table = Channel<Ball>()
 
     launch { player("ping", table) }

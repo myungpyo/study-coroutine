@@ -6,7 +6,7 @@ import kotlinx.coroutines.channels.consumeEach
 import kotlinx.coroutines.channels.produce
 import kotlinx.coroutines.runBlocking
 
-fun main(args: Array<String>) = runBlocking<Unit> {
+fun main() = runBlocking<Unit> {
     val numbers = produceNumbers(5)
     val doubledNumbers = produceDouble(numbers)
     doubledNumbers.consumeEach { println(it) }

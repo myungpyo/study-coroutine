@@ -7,7 +7,7 @@ import kotlinx.coroutines.withContext
 
 val counterContext = newSingleThreadContext("CounterContext")
 
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
 
     GlobalScope.massiveRun {
         withContext(counterContext) {

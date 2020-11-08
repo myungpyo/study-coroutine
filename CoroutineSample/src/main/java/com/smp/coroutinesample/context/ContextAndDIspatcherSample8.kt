@@ -2,7 +2,7 @@ package com.smp.coroutinesample.context
 
 import kotlinx.coroutines.*
 
-fun main(args: Array<String>) = runBlocking<Unit> {
+fun main() = runBlocking<Unit> {
 
     log("Started main coroutine")
 // run two background value computations

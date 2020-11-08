@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 
-fun main(args: Array<String>) = runBlocking<Unit> {
+fun main() = runBlocking<Unit> {
     val channel = Channel<String>()
     launch { sendString(channel, "Foo", 200L) }
     launch { sendString(channel, "Bar", 500L) }

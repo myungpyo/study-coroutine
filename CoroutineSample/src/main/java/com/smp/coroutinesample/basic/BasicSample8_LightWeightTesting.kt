@@ -5,7 +5,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
     repeat(100_000) {
         launch {
             delay(1000L)

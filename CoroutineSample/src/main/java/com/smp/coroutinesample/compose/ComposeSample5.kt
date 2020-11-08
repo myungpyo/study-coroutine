@@ -6,7 +6,7 @@ import kotlinx.coroutines.runBlocking
 import kotlin.system.measureTimeMillis
 
 
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
     val time = measureTimeMillis {
         println("The answer is ${concurrentSum()}")
     }

@@ -8,7 +8,7 @@ import kotlinx.coroutines.channels.produce
 import kotlinx.coroutines.selects.select
 
 
-fun main(args: Array<String>) = runBlocking<Unit> {
+fun main() = runBlocking<Unit> {
 
     val side = Channel<Int>() // allocate side channel
 

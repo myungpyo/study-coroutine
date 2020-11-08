@@ -7,7 +7,7 @@ import kotlin.system.measureTimeMillis
 var counter = 0
 val mtContext = newFixedThreadPoolContext(2, "mtPool")
 
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
 
     GlobalScope.massiveRun {
 //    CoroutineScope(mtContext).massiveRun {

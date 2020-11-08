@@ -3,7 +3,7 @@ package com.smp.coroutinesample.cancel
 import kotlinx.coroutines.*
 
 
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
     val job = launch(Dispatchers.Default) {
         for (i in 1..10) {
             if (!isActive) {

@@ -7,7 +7,7 @@ import kotlinx.coroutines.channels.actor
 import kotlinx.coroutines.runBlocking
 
 
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
     val counter = counterActor()
     massiveRun {
         counter.send(IncCounter)

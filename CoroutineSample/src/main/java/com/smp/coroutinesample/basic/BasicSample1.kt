@@ -5,7 +5,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
-fun main(args: Array<String>) {
+fun main() {
     GlobalScope.launch {
         delay(1000L)
         println("World!")

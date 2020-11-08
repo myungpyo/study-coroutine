@@ -2,7 +2,7 @@ package com.smp.coroutinesample.context
 
 import kotlinx.coroutines.*
 
-fun main(args: Array<String>) = runBlocking<Unit> {
+fun main() = runBlocking<Unit> {
 
     // launch a coroutine to process some kind of incoming request
     val request = launch {

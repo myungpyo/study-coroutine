@@ -6,7 +6,7 @@ import kotlin.system.measureTimeMillis
 
 var atomicCounter = AtomicInteger()
 
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
 
     GlobalScope.massiveRun {
 //    CoroutineScope(mtContext).massiveRun {

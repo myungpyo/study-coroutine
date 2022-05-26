@@ -10,9 +10,9 @@ import com.smp.coroutineplayground.domain.MemoRepository
 import com.smp.coroutineplayground.presentation.MainViewModel
 import com.smp.coroutineplayground.support.SchedulerProvider
 import com.smp.coroutineplayground.support.SchedulerProviderImpl
-import org.koin.android.ext.android.startKoin
-import org.koin.androidx.viewmodel.ext.koin.viewModel
-import org.koin.dsl.module.module
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.context.GlobalContext.startKoin
+import org.koin.dsl.module
 
 
 class MainApplication : Application() {
@@ -29,6 +29,8 @@ class MainApplication : Application() {
             viewModel { MainViewModel(get(), get()) }
         }
 
-        startKoin(this, listOf(memoModule))
+        startKoin {
+            modules(memoModule)
+        }
     }
 }

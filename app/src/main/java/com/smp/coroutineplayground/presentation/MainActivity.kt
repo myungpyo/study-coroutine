@@ -4,26 +4,29 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.smp.coroutineplayground.R
+import com.smp.coroutineplayground.databinding.MainActivityBinding
 import com.smp.coroutineplayground.entity.Memo
 import com.smp.coroutineplayground.support.BaseActivity
 import com.smp.coroutineplayground.support.Progress
 import com.smp.coroutineplayground.support.observeNotNull
-import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity() {
+
+    private lateinit var binding: MainActivityBinding
 
     private val mainViewModel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = MainActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        swipeRefreshView.setOnRefreshListener {
+        binding.swipeRefreshView.setOnRefreshListener {
             mainViewModel.syncMemos()
         }
 
-        memosView.apply {
+        binding.memosView.apply {
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
             adapter = MemosAdapter()
         }
@@ -34,7 +37,7 @@ class MainActivity : BaseActivity() {
             }
 
             observeNotNull(memosSyncProgress) {
-                swipeRefreshView.isRefreshing = it != Progress.IDLE
+                binding.swipeRefreshView.isRefreshing = it != Progress.IDLE
             }
         }
 
@@ -43,7 +46,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun submitList(memos: List<Memo>) {
-        (memosView.adapter as? MemosAdapter)?.let {
+        (binding.memosView.adapter as? MemosAdapter)?.let {
             it.submit(memos)
             it.notifyDataSetChanged()
         }

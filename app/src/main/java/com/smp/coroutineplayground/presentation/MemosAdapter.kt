@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.smp.coroutineplayground.R
+import com.smp.coroutineplayground.databinding.MemoItemBinding
 import com.smp.coroutineplayground.entity.Memo
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.memo_item.*
@@ -36,24 +37,21 @@ class MemosAdapter : RecyclerView.Adapter<MemoViewHolder>() {
 }
 
 class MemoViewHolder(
-    override val containerView: View,
+    private val binding: MemoItemBinding,
     private val dateFormat: DateFormat = DateFormat.getDateInstance()
-) : RecyclerView.ViewHolder(containerView),
-    LayoutContainer {
+) : RecyclerView.ViewHolder(binding.root) {
 
     companion object {
         fun create(parent: ViewGroup): MemoViewHolder {
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.memo_item, parent, false)
-
-            return MemoViewHolder(view)
+            val binding = MemoItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            return MemoViewHolder(binding)
         }
     }
 
     fun bind(memo: Memo) {
-        titleView.text = memo.title
-        contentView.text = memo.content
-        timeView.text = dateFormat.format(Date(memo.lastModifiedAt))
+        binding.titleView.text = memo.title
+        binding.contentView.text = memo.content
+        binding.timeView.text = dateFormat.format(Date(memo.lastModifiedAt))
     }
 
 }
